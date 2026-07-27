@@ -1,1 +1,300 @@
-/Users/ezechukwu69/development/configs/my-arch-config/modules/init/dotfiles/zed/settings.json
+//
+// Zed settings
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "format_on_save": "on",
+  "cli_default_open_behavior": "existing_window",
+  "code_lens": "on",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "diff_view_style": "unified",
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry",
+    },
+    "pi-acp": {
+      "type": "registry",
+    },
+    "gemini": {
+      "type": "registry",
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "type": "registry",
+    },
+    "opencode": {
+      "default_config_options": {
+        "effort": "medium",
+        "model": "openai/gpt-5.6-sol",
+      },
+      "type": "registry",
+    },
+    "github-copilot": {
+      "type": "registry",
+    },
+  },
+  "status_bar": {
+    "active_language_button": false,
+    "active_encoding_button": "disabled",
+    "cursor_position_button": false,
+    "experimental.show": false,
+  },
+  "title_bar": {
+    "show_branch_status_icon": true,
+    "show_sign_in": true,
+    "show_branch_name": true,
+    "show_menus": false,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_user_menu": true,
+    "show_user_picture": true,
+  },
+  "project_panel": {
+    "button": false,
+    "dock": "right",
+    "sticky_scroll": false,
+    "scrollbar": {
+      "show": "never",
+    },
+    "indent_guides": {
+      "show": "never",
+    },
+  },
+  "file_types": {
+    "Django": ["**/templates/**/*.html"],
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "dock": "right",
+  },
+  "lsp_results_location": "picker",
+  "context_servers": {
+    "dart-mcp-server": {
+      "enabled": true,
+      "remote": false,
+      "command": "dart",
+      "args": ["mcp-server"],
+      "env": {},
+    },
+  },
+
+  "ssh_connections": [
+    {
+      "host": "98.95.142.222",
+      "username": "bitnami",
+      "args": ["-i", "~/keys/LightsailDefaultKey-us-east-1.pem"],
+      "projects": [
+        {
+          "paths": ["/home/bitnami/Niklaar-backend/./"],
+        },
+      ],
+    },
+    {
+      "host": "98.95.142.222",
+      "username": "bitnami",
+      "args": [
+        "-i",
+        "/Users/ezechukwu69/keys/LightsailDefaultKey-us-east-1.pem",
+      ],
+      "projects": [
+        {
+          "paths": ["/home/bitnami"],
+        },
+        {
+          "paths": ["/home/bitnami/Borderpay-Backend/./"],
+        },
+      ],
+      "nickname": "LightSail1",
+    },
+  ],
+  // "use_podman": true,
+  "git_panel": {
+    "group_by": "staging",
+    "dock": "right",
+    "tree_view": true,
+  },
+  "which_key": {
+    "delay_ms": 500,
+    "enabled": true,
+  },
+  "colorize_brackets": true,
+  "agent": {
+    "sandbox_permissions": {
+      "allow_unsandboxed": false,
+    },
+    "dock": "right",
+    "sidebar_side": "right",
+    "play_sound_when_agent_done": "always",
+    "show_turn_stats": true,
+    // "default_width": 200.0,
+    "default_profile": "write",
+    "default_model": {
+      "speed": "standard",
+      "effort": "medium",
+      "enable_thinking": true,
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-sol",
+    },
+    "model_parameters": [],
+  },
+  "language_models": {
+    "lmstudio": {
+      "available_models": [
+        {
+          "display_name": "Qwen 3 (1.7b)",
+          "max_tokens": 32000,
+          "name": "qwen/qwen3-1.7b",
+          "supports_images": true,
+          "supports_tool_calls": true,
+        },
+      ],
+    },
+  },
+  "languages": {
+    "Ruby": {
+      "format_on_save": "on",
+      "language_servers": [
+        "ruby-lsp",
+        "tailwindcss-language-server",
+        "rubocop",
+        "herb",
+        "!steep",
+        "!solargraph",
+      ],
+    },
+    "HTML+ERB": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "erb-format",
+        },
+      },
+      "language_servers": [
+        "herb",
+        "emmet-language-server",
+        "ruby-lsp",
+        "tailwindcss-language-server",
+      ],
+    },
+    "Python": {
+      "language_servers": ["pyrefly", "!ty", "!basedpyright"],
+    },
+    "Django": {
+      "language_servers": [
+        "django-language-server",
+        "!django-template-lsp",
+        "vscode-html-language-server",
+        "tailwindcss-language-server",
+        "emmet-language-server",
+        "vscode-css-language-server",
+      ],
+    },
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "html+erb": "html",
+          "ruby": "html",
+        },
+        "experimental": {
+          "classRegex": ["\\bclass:\\s*['\"]([^'\"]*)['\"]"],
+        },
+      },
+    },
+    "ruby-lsp": {
+      "initialization_options": {},
+    },
+  },
+  "edit_predictions": {
+    // "provider": "mercury",
+    // "mode": "eager",
+    "provider": "ollama",
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "model": "DiamondGotCat/Zeta-2:latest",
+      "prompt_format": "infer",
+      "max_output_tokens": 512,
+    },
+  },
+  "experimental.theme_overrides": {
+    "border": "#57595B",
+  },
+  // "sticky_scroll": {
+  //   "enabled": true,
+  // },
+  "file_finder": {
+    "modal_max_width": "xlarge",
+    "include_channels": true,
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+  },
+  "relative_line_numbers": "enabled",
+  "use_smartcase_search": true,
+  "double_click_in_multibuffer": "open",
+  "show_whitespaces": "none",
+  "vim_mode": true,
+  // "base_keymap": "Emacs",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "Aporetic Serif Mono",
+  "terminal": {
+    "dock": "right",
+    "font_family": "Aporetic Sans Mono",
+    "font_weight": 600,
+  },
+  "ui_font_size": 15,
+  "buffer_font_size": 16,
+  "active_pane_modifiers": {
+    "border_size": 1,
+    "inactive_opacity": 0.8,
+  },
+  "buffer_font_weight": 600,
+  "ui_font_weight": 600,
+  "vim": {
+    "toggle_relative_line_numbers": true,
+  },
+  "diagnostics": {
+    "inline": {
+      "max_severity": "error",
+      "enabled": true,
+      "padding": 2,
+    },
+  },
+  "gutter": {
+    "min_line_number_digits": 0,
+    "folds": false,
+  },
+  "indent_guides": {
+    "enabled": true,
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false,
+  },
+  "tab_bar": {
+    "show": false,
+  },
+  "scrollbar": {
+    "show": "never",
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light Soft",
+    "dark": "One Dark Pro Max",
+  },
+}
