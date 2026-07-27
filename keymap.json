@@ -1,1 +1,192 @@
-/Users/ezechukwu69/development/configs/my-arch-config/modules/init/dotfiles/zed/keymap.json
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "space": null,
+      "ctrl-w": null,
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      "cmd-n": ["projects::OpenRecent", { "create_new_window": false }],
+      "alt-t": "terminal_panel::Toggle",
+      "alt-a": "agent::Toggle",
+      "alt-d": "debug_panel::Toggle",
+      "ctrl-w q": "workspace::CloseWindow",
+      "alt-cmd-s": "multi_workspace::ToggleWorkspaceSidebar",
+    },
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      // "space shift-k": "workspace::CloseAllDocks",
+      // "space o k": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      // "space n a": "agent::ToggleNewThreadMenu",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      // "space n a": "git_panel::OpenMenu",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": "vim::Down",
+      "ctrl-p": "vim::Up",
+    },
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "space o t": "terminal_panel::Toggle",
+      "space o o": "outline_panel::ToggleFocus",
+      "space o d": "debug_panel::ToggleFocus",
+      "space o g": "git_panel::ToggleFocus",
+      "space o e": "vim::ToggleProjectPanelFocus",
+      "space o w": "editor::ToggleFocus",
+      "space o a": "agent::Toggle",
+      "space o T": "task::Spawn",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert && edit_prediction",
+    "bindings": {
+      "alt-;": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // "ctrl-n": "vim::Down",
+      // "ctrl-p": "vim::Up",
+      "g w": "vim::HelixJumpToWord",
+      "g r i": "editor::GoToImplementation",
+      "g r t": "editor::GoToTypeDefinition",
+
+      "space b b": "tab_switcher::ToggleAll",
+      "space f b": "tab_switcher::ToggleAll",
+      "space e": "vim::ToggleProjectPanelFocus",
+      // "space f f": "file_finder::Toggle",
+      "space space": "file_finder::Toggle",
+      "space c j": "project_symbols::Toggle",
+      "space s S": "project_symbols::Toggle",
+      "space c x": "diagnostics::DeployCurrentFile",
+      "space c shift-x": "diagnostics::Deploy",
+      "space s s": "outline::Toggle",
+
+      "space d t f": "debugger::FocusFrames",
+      "space d t b": "debugger::FocusBreakpointList",
+      "space d t c": "debugger::FocusConsole",
+      "space d t v": "debugger::FocusVariables",
+      "space d t t": "debugger::FocusTerminal",
+      "space d c": "debugger::Continue",
+      "space d s": "debugger::Start",
+      "space d p": "debugger::Pause",
+      "space d R": "debugger::Restart",
+      "space d q": "debugger::Stop",
+      "space d d": "debugger::Detach",
+      "space d i": "debugger::StepInto",
+      "space d o": "debugger::StepOut",
+      "space d O": "debugger::StepOver",
+      "space d b": "editor::ToggleBreakpoint",
+      "space d u": "debug_panel::ToggleFocus",
+
+      "space p c": "workspace::CloseWindow",
+
+      "space g g": "git_panel::ToggleFocus",
+      "space g =": "editor::ExpandAllDiffHunks",
+      "space g -": "editor::CollapseAllDiffHunks",
+      "space h i": "editor::ToggleSelectedDiffHunks",
+      "space g p": "git::PullRebase",
+      "space g f": "git::FetchFrom",
+      "space g D": "git::Diff",
+      "space g d": "git_panel::ToggleFocus",
+      "space g c": "git::Commit",
+      "space g r": "git::SelectRepo",
+      "space g l": "git_graph::Open",
+      "space g B": "git::Blame",
+      "space g j": [
+        "task::Spawn",
+        { "task_name": "start jjui", "reveal_target": "center" },
+      ],
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk",
+      "space g P": "git::PushTo",
+      "space g b": "git::Branch",
+      "space g u": "git::Restore",
+      "space g s": "git::StageAndNext",
+      "space g S": "git::UnstageAndNext",
+      "space g a u": "git::UnstageAll",
+      "space g a s": "git::StageAll",
+      "space f p": [
+        "task::Spawn",
+        {
+          "task_name": "Open Project",
+          "reveal_target": "center",
+        },
+      ],
+      "space f f": "file_finder::Toggle",
+      "alt-q": "pane::CloseActiveItem",
+      // "space f f": [
+      //   "task::Spawn",
+      //   {
+      //     "task_name": "Find file",
+      //     "reveal_target": "center"
+      //   }
+      // ],
+      "space s g": "text_finder::Toggle",
+      // "space s g": [
+      //   "task::Spawn",
+      //   {
+      //     "task_name": "Television Text Finder",
+      //     "reveal_target": "center",
+      //   },
+      // ],
+    },
+  },
+  // disabling bindings
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-n": null, // cmd-r will do nothing when the Workspace context is active
+      "ctrl-p": null, // cmd-r will do nothing when the Workspace context is active
+      "ctrl-t": null, // cmd-r will do nothing when the Workspace context is active
+      "ctrl-w": null, // cmd-r will do nothing when the Workspace context is active
+    },
+  },
+  {
+    "context": "AgentPanel || Editor || Terminal || DebugPanel || GitPanel",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-shift-h": "workspace::MovePaneLeft",
+      "ctrl-shift-l": "workspace::MovePaneRight",
+      "ctrl-shift-k": "workspace::MovePaneUp",
+      "ctrl-shift-j": "workspace::MovePaneDown",
+    },
+  },
+]

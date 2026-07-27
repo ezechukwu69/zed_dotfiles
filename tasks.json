@@ -1,1 +1,32 @@
-/Users/ezechukwu69/development/configs/my-arch-config/modules/init/dotfiles/zed/tasks.json
+[
+  {
+    "label": "mini-test file $ZED_RELATIVE_FILE",
+    "command": "bin/rails",
+    "hide": "never",
+    "args": ["test", "$ZED_RELATIVE_FILE", "-v"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["ruby-test"],
+  },
+  {
+    "label": "mini-test $ZED_RELATIVE_FILE -n /$ZED_CUSTOM_RUBY_TEST_NAME/",
+    "command": "bin/rails",
+    "hide": "never",
+    "args": [
+      "test",
+      "$ZED_RELATIVE_FILE",
+      "-i",
+      "\"$ZED_CUSTOM_RUBY_TEST_NAME\"",
+      "-v",
+    ],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["ruby-test"],
+  },
+  {
+    "label": "rspec-test $ZED_RELATIVE_FILE:$ZED_ROW",
+    "command": "bundle",
+    "hide": "never",
+    "args": ["exec", "rspec", "\"$ZED_RELATIVE_FILE:$ZED_ROW\""],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "tags": ["ruby-test"],
+  },
+]

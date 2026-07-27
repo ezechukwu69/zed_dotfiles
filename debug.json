@@ -1,1 +1,61 @@
-/Users/ezechukwu69/development/configs/my-arch-config/modules/init/dotfiles/zed/debug.json
+// Some example tasks for common languages.
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  // {
+  //   "label": "Debug active Python file",
+  //   "adapter": "Debugpy",
+  //   "program": "$ZED_FILE",
+  //   "request": "launch",
+  //   "cwd": "$ZED_WORKTREE_ROOT",
+  // },
+  // {
+  //   "label": "Debug active JavaScript file",
+  //   "adapter": "JavaScript",
+  //   "program": "$ZED_FILE",
+  //   "request": "launch",
+  //   "cwd": "$ZED_WORKTREE_ROOT",
+  //   "type": "pwa-node",
+  // },
+  // {
+  //   "label": "JavaScript debug terminal",
+  //   "adapter": "JavaScript",
+  //   "request": "launch",
+  //   "cwd": "$ZED_WORKTREE_ROOT",
+  //   "console": "integratedTerminal",
+  //   "type": "pwa-node",
+  // },
+  {
+    "label": "Debug flutter app (IOS Emulator)",
+    "adapter": "Dart",
+    "type": "flutter",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "request": "launch",
+    "program": "lib/main.dart",
+    "env": {
+      "PATH": "/Users/ezechukwu69/.config/zed/dap-bin:/Users/ezechukwu69/installations/flutter/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    },
+    "toolArgs": ["-d", "E4773DA5-927A-4E6C-B44F-A3015B8E73A0"],
+  },
+  {
+    "label": "Debug flutter app",
+    "adapter": "Dart",
+    "type": "flutter",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "request": "launch",
+    "program": "lib/main.dart",
+    "env": {
+      "PATH": "/Users/ezechukwu69/.config/zed/dap-bin:/Users/ezechukwu69/installations/flutter/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    },
+  },
+  {
+    "label": "Attach flutter app (Custom)",
+    "adapter": "Dart",
+    "type": "flutter",
+    "request": "attach",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "program": "lib/main.dart",
+    // "vmServiceUri": "http://127.0.0.1:50300",
+  },
+]

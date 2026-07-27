@@ -1,5 +1,5 @@
-//
 // Zed settings
+//
 // For information on how to configure Zed, see the Zed
 // documentation: https://zed.dev/docs/configuring-zed
 //
@@ -7,23 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "cli_default_open_behavior": "existing_window",
-  "icon_theme": {
-    "mode": "dark",
-    "light": "Zed (Default)",
-    "dark": "Zed (Default)",
-  },
-  "diff_view_style": "unified",
   "agent_servers": {
-    "github-copilot-cli": {
-      "type": "registry",
-    },
-    "claude-acp": {
-      "type": "registry",
-    },
-    "opencode": {
-      "type": "registry",
-    },
     "github-copilot": {
       "default_model": "gpt-5-mini",
       "type": "registry",
@@ -36,14 +20,14 @@
     "experimental.show": false,
   },
   "title_bar": {
-    "show_sign_in": true,
-    "show_branch_icon": true,
-    "show_branch_name": true,
+    "show_sign_in": false,
+    "show_branch_icon": false,
+    "show_branch_name": false,
     "show_menus": false,
-    "show_onboarding_banner": true,
-    "show_project_items": true,
-    "show_user_menu": true,
-    "show_user_picture": true,
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_user_menu": false,
+    "show_user_picture": false,
   },
   "project_panel": {
     "button": false,
@@ -62,15 +46,7 @@
   "collaboration_panel": {
     "dock": "right",
   },
-  "context_servers": {
-    "dart-mcp-server": {
-      "enabled": true,
-      "remote": false,
-      "command": "dart",
-      "args": ["mcp-server"],
-      "env": {},
-    },
-  },
+  "context_servers": {},
   "ssh_connections": [
     {
       "host": "98.95.142.222",
@@ -94,58 +70,20 @@
   },
   "colorize_brackets": true,
   "agent": {
-    "dock": "right",
-    "sidebar_side": "right",
-    "play_sound_when_agent_done": "when_hidden",
-    "show_turn_stats": true,
-    "default_width": 300.0,
     "default_profile": "write",
     "default_model": {
-      "enable_thinking": true,
-      "effort": "high",
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
     },
     "model_parameters": [],
   },
-  "language_models": {
-    "lmstudio": {
-      "available_models": [
-        {
-          "display_name": "Qwen 3 (1.7b)",
-          "max_tokens": 32000,
-          "name": "qwen/qwen3-1.7b",
-          "supports_images": true,
-          "supports_tool_calls": true,
-        },
-      ],
-    },
-  },
   "languages": {
     "Ruby": {
-      "format_on_save": "on",
       "language_servers": [
         "ruby-lsp",
         "tailwindcss-language-server",
-        "rubocop",
-        "herb",
-        "!steep",
         "!solargraph",
-      ],
-    },
-    "HTML+ERB": {
-      "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "erb-format",
-          "arguments": ["--stdin-filename", "{buffer_path}"],
-        },
-      },
-      "language_servers": [
-        "herb",
-        "emmet-language-server",
-        "ruby-lsp",
-        "tailwindcss-language-server",
+        "!rubocop",
       ],
     },
     "Python": {
@@ -164,19 +102,19 @@
         },
       },
     },
-    "ruby-lsp": {
-      "initialization_options": {},
-    },
   },
   "edit_predictions": {
-    "provider": "copilot",
     "mode": "eager",
   },
   // "sticky_scroll": {
   //   "enabled": true,
   // },
+  "features": {
+    // "edit_prediction_provider": "supermaven"
+    "edit_prediction_provider": "supermaven",
+  },
   "file_finder": {
-    "modal_max_width": "small",
+    "modal_max_width": "xlarge",
   },
   "tabs": {
     "file_icons": true,
@@ -191,18 +129,18 @@
   "ui_font_family": "Iosevka Nerd Font",
   "buffer_font_family": "Iosevka Nerd Font",
   "terminal": {
-    "dock": "bottom",
+    "dock": "right",
     "font_family": "Iosevka Nerd Font",
-    "font_weight": 600,
+    "font_weight": 700,
   },
   "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "buffer_font_size": 14,
   "active_pane_modifiers": {
     "border_size": 1,
     "inactive_opacity": 0.8,
   },
   "buffer_font_weight": 700,
-  "ui_font_weight": 600,
+  "ui_font_weight": 700,
   "vim": {
     "toggle_relative_line_numbers": true,
   },
@@ -221,7 +159,7 @@
     "enabled": true,
   },
   "toolbar": {
-    "breadcrumbs": false,
+    "breadcrumbs": true,
     "quick_actions": false,
     "selections_menu": false,
   },
@@ -231,9 +169,5 @@
   "scrollbar": {
     "show": "never",
   },
-  "theme": {
-    "mode": "dark",
-    "light": "Gruvbox Light Soft",
-    "dark": "Catppuccin Mocha",
-  },
+  "theme": "One Dark Pro Max",
 }
